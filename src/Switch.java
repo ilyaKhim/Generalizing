@@ -1,7 +1,9 @@
 //1. Написать метод, который меняет два элемента массива местами (массив может быть любого ссылочного типа);
+//2. Написать метод, который преобразует массив в ArrayList;
 
-
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 
 public class Switch<T> {
 
@@ -15,23 +17,27 @@ public class Switch<T> {
         arr[1] = temp;
     }
 
+    private ArrayList<T> toList(T[] arr){
+        ArrayList<T> answer = new ArrayList<>(Arrays.asList(arr));
+        return answer;
+    }
+
     public static void main(String[] args) {
         Integer[] test = {1,2};
-//        System.out.println(Arrays.asList(test));
-        Switch arr = new Switch<>(test);
+        Switch<Integer> arr = new Switch<>(test);
         arr.change();
-        System.out.println(Arrays.asList(test));
+        List<Integer> arrayList = new ArrayList<>(arr.toList(test));
 
         String[] test1 = {"Hello", "World"};
-//        System.out.println(Arrays.asList(test1));
-        Switch arr1 = new Switch<>(test1);
+        Switch<String> arr1 = new Switch<>(test1);
         arr1.change();
-        System.out.println(Arrays.asList(test1));
+        List<String> arrayList1 = new ArrayList<>(arr1.toList(test1));
+
 
         Object[] test2 = {"Obj1", 2};
-//        System.out.println(Arrays.asList(test2));
-        Switch arr2 = new Switch<>(test2);
+        Switch<Object> arr2 = new Switch<>(test2);
         arr2.change();
-        System.out.println(Arrays.asList(test2));
+        List<Object> arrayList2 = new ArrayList<>(arr2.toList(test2));
+
     }
 }
