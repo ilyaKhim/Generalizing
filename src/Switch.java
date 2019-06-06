@@ -3,10 +3,10 @@ import java.util.Arrays;
 public class Switch<T> {
 
     private T[] arr;
-    Switch(T[] arr){
+    private Switch(T[] arr){
         this.arr = arr;
     }
-    public void change(){
+    private void change(){
         T temp = arr[0];
         arr[0] = arr[1];
         arr[1] = temp;
