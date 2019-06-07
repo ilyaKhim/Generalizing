@@ -17,7 +17,7 @@ public class Switch<T> {
         arr[1] = temp;
     }
 
-    private ArrayList<T> toList(T[] arr){
+    private ArrayList<T> toArrList(T[] arr){
         ArrayList<T> answer = new ArrayList<>(Arrays.asList(arr));
         return answer;
     }
@@ -26,18 +26,18 @@ public class Switch<T> {
         Integer[] test = {1,2};
         Switch<Integer> arr = new Switch<>(test);
         arr.change();
-        List<Integer> arrayList = new ArrayList<>(arr.toList(test));
+        List<Integer> arrayList = new ArrayList<>(arr.toArrList(test));
 
         String[] test1 = {"Hello", "World"};
         Switch<String> arr1 = new Switch<>(test1);
         arr1.change();
-        List<String> arrayList1 = new ArrayList<>(arr1.toList(test1));
+        List<String> arrayList1 = new ArrayList<>(arr1.toArrList(test1));
 
 
         Object[] test2 = {"Obj1", 2};
         Switch<Object> arr2 = new Switch<>(test2);
         arr2.change();
-        List<Object> arrayList2 = new ArrayList<>(arr2.toList(test2));
+        List<Object> arrayList2 = new ArrayList<>(arr2.toArrList(test2));
 
     }
 }
